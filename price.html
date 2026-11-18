@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Формати запуску та планування витрат – Linear</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Порівняйте прототип, робочий застосунок і рішення для команди. Визначте обсяг робіт і складові витрат на створення без коду."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-intro" aria-hidden="true">
+      <div class="modal-content project-dialog">
+        <button type="button" class="modal-close" aria-label="Закрити форму">&times;</button>
+        <p class="dialog-eyebrow">Від ідеї до застосунку</p>
+        <h2 id="project-dialog-title">Опишіть свій задум</h2>
+        <p id="project-dialog-intro">Продумайте перший крок: для кого ваш застосунок і яку задачу він має вирішити.</p>
+        <form id="contact-form" class="project-form" data-validate>
+          <div class="dialog-fields">
+            <div class="form-field">
+              <label for="project-name">Ваше ім’я</label>
+              <input type="text" id="project-name" name="name" placeholder="Як до вас звертатися" autocomplete="given-name" minlength="2" maxlength="60" required aria-describedby="project-name-error" />
+              <p class="field-error" id="project-name-error" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+              <label for="project-email">Електронна пошта</label>
+              <input type="email" id="project-email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="120" required aria-describedby="project-email-error" />
+              <p class="field-error" id="project-email-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="project-type">Який застосунок ви плануєте?</label>
+            <select id="project-type" name="type" required aria-describedby="project-type-error">
+              <option value="">Оберіть напрям</option>
+              <option value="catalog">Каталог товарів або послуг</option>
+              <option value="portal">Клієнтський портал</option>
+              <option value="workflow">Внутрішній інструмент команди</option>
+              <option value="education">Освітній застосунок</option>
+              <option value="other">Власна ідея</option>
+            </select>
+            <p class="field-error" id="project-type-error" aria-live="polite"></p>
+          </div>
+          <div class="form-field">
+            <label for="project-idea">Основна задача застосунку</label>
+            <textarea id="project-idea" name="idea" rows="3" placeholder="Наприклад: каталог майстерні з описами виробів і зручним пошуком" minlength="20" maxlength="1000" required aria-describedby="project-idea-hint project-idea-error"></textarea>
+            <p class="field-hint" id="project-idea-hint">Від 20 до 1000 символів. Опишіть користувача та очікуваний результат.</p>
+            <p class="field-error" id="project-idea-error" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn dialog-submit">Готово <span aria-hidden="true">↗</span></button>
+        </form>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo"
+          ><img src="img/logo.png" alt="Linear"
+        /></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="team.html">Команда</a></li>
+            <li><a href="price.html" style="color:#5e6ad2" aria-current="page">Формати</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+          </ul>
+          <a href="#contact-modal" class="btn" id="open-modal" aria-haspopup="dialog" aria-controls="contact-modal">Описати ідею</a>
+        </nav>
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <main class="main-section">
+      <div class="container-main">
+        <div class="bg-fon">
+          <img src="img/a.png" alt="Ілюстрація цифрового робочого простору" />
+        </div>
+        <h1 class="title">Оберіть масштаб першого запуску</h1>
+        <p class="description">Почніть із задачі та визначте обсяг робіт. Витрати залежать від обраного конструктора, кількості користувачів, даних та потрібних інтеграцій. Порівняйте три підходи до планування.</p>
+      </div>
+    </main>
+    <section class="pricing-section" id="plans">
+      <div class="container-pricing">
+        <div class="pricing-card">
+          <h2 class="pricing-title">Прототип</h2>
+          <p class="pricing-description">Щоб перевірити ідею та головний сценарій</p>
+          <p class="pricing-cost">Малий обсяг</p>
+          <ul class="pricing-features">
+            <li>Ключові екрани та навігація</li>
+            <li>Структура прикладів даних</li>
+            <li>Перевірка шляху користувача</li>
+          </ul>
+          <a href="#contact-modal" class="btn-pricing" data-open-project>Описати задачу</a>
+        </div>
+        <div class="pricing-card featured">
+          <h2 class="pricing-title">Робочий застосунок</h2>
+          <p class="pricing-description">Щоб об’єднати сторінки, дані та дії</p>
+          <p class="pricing-cost">Більше логіки</p>
+          <ul class="pricing-features">
+            <li>Пов’язані розділи й записи</li>
+            <li>Сценарії взаємодії з даними</li>
+            <li>Адаптація для різних екранів</li>
+          </ul>
+          <a href="#contact-modal" class="btn-pricing" data-open-project>Описати задачу</a>
+        </div>
+        <div class="pricing-card">
+          <h2 class="pricing-title">Командне рішення</h2>
+          <p class="pricing-description">Щоб узгодити спільну роботу й доступи</p>
+          <p class="pricing-cost">Спільна робота</p>
+          <ul class="pricing-features">
+            <li>Розподіл ролей і доступів</li>
+            <li>Узгоджені робочі процеси</li>
+            <li>План підтримки та розвитку</li>
+          </ul>
+          <a href="#contact-modal" class="btn-pricing" data-open-project>Описати задачу</a>
+        </div>
+      </div>
+    </section>
+    <section class="cta-section">
+      <div class="container-cta">
+        <h2 class="cta-title">Спочатку – корисна перша версія</h2>
+        <p class="cta-text">Запишіть, хто користуватиметься застосунком, які дані потрібні та який результат має дати перший запуск. Це допоможе визначити доречний формат і уникнути зайвих витрат.</p>
+        <a href="contact.html" class="btn-cta">Підготувати ідею</a>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <p>
+            <img src="img/favicon.png" alt="Linear" />Linear
+          </p>
+          <div class="footer-socials">
+            <a href="index.html#scenarios" aria-label="Сценарії застосування"
+              ><i class="fa-brands fa-twitter" style="color: #8a8f98"></i
+            ></a>
+            <a href="team.html#roles" aria-label="Ролі в команді"
+              ><i class="fa-brands fa-github" style="color: #8a8f98"></i
+            ></a>
+            <a href="contact.html#faq" aria-label="Часті питання"
+              ><i class="fa-brands fa-slack" style="color: #8a8f98"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Продукт</h4>
+            <ul>
+              <li><a href="index.html#features">Можливості</a></li>
+              <li><a href="index.html#features">Візуальні сторінки</a></li>
+              <li><a href="price.html#plans">Формати запуску</a></li>
+              <li><a href="index.html#workflows">Робочі процеси</a></li>
+              <li><a href="contact.html#faq">З чого почати</a></li>
+              <li><a href="team.html#approach">Підхід до створення</a></li>
+              <li><a href="contact.html#idea">Підготувати ідею</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Компанія</h4>
+            <ul>
+              <li><a href="team.html#approach">Наш підхід</a></li>
+              <li><a href="team.html#roles">Ролі в команді</a></li>
+              <li><a href="index.html#workflows">Етапи запуску</a></li>
+              <li><a href="index.html#scenarios">Для кого сервіс</a></li>
+              <li><a href="index.html">Про Linear</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Ресурси</h4>
+            <ul>
+              <li><a href="index.html#scenarios">Сценарії застосування</a></li>
+              <li><a href="contact.html#local-contacts">Контакти</a></li>
+              <li><a href="index.html#data">Підготовка даних</a></li>
+              <li><a href="contact.html#faq">Питання про дані</a></li>
+              <li><a href="price.html#plans">План запуску</a></li>
+              <li><a href="contact.html#idea">Описати задачу</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Для творців</h4>
+            <ul>
+              <li><a href="index.html#data">Структура даних</a></li>
+              <li><a href="index.html#workflows">Автоматизація</a></li>
+              <li><a href="index.html#scenarios">Внутрішні інструменти</a></li>
+              <li><a href="team.html#roles">Ролі та відповідальність</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>

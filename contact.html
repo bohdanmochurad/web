@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Контакти в Івано-Франківську та питання – Linear</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Контактні дані в Івано-Франківську: адреса, телефон, графік роботи та карта. Підготуйте ідею вебзастосунку й перегляньте відповіді на часті питання."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-intro" aria-hidden="true">
+      <div class="modal-content project-dialog">
+        <button type="button" class="modal-close" aria-label="Закрити форму">&times;</button>
+        <p class="dialog-eyebrow">Від ідеї до застосунку</p>
+        <h2 id="project-dialog-title">Опишіть свій задум</h2>
+        <p id="project-dialog-intro">Продумайте перший крок: для кого ваш застосунок і яку задачу він має вирішити.</p>
+        <form id="contact-form" class="project-form" data-validate>
+          <div class="dialog-fields">
+            <div class="form-field">
+              <label for="project-name">Ваше ім’я</label>
+              <input type="text" id="project-name" name="name" placeholder="Як до вас звертатися" autocomplete="given-name" minlength="2" maxlength="60" required aria-describedby="project-name-error" />
+              <p class="field-error" id="project-name-error" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+              <label for="project-email">Електронна пошта</label>
+              <input type="email" id="project-email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="120" required aria-describedby="project-email-error" />
+              <p class="field-error" id="project-email-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="project-type">Який застосунок ви плануєте?</label>
+            <select id="project-type" name="type" required aria-describedby="project-type-error">
+              <option value="">Оберіть напрям</option>
+              <option value="catalog">Каталог товарів або послуг</option>
+              <option value="portal">Клієнтський портал</option>
+              <option value="workflow">Внутрішній інструмент команди</option>
+              <option value="education">Освітній застосунок</option>
+              <option value="other">Власна ідея</option>
+            </select>
+            <p class="field-error" id="project-type-error" aria-live="polite"></p>
+          </div>
+          <div class="form-field">
+            <label for="project-idea">Основна задача застосунку</label>
+            <textarea id="project-idea" name="idea" rows="3" placeholder="Наприклад: каталог майстерні з описами виробів і зручним пошуком" minlength="20" maxlength="1000" required aria-describedby="project-idea-hint project-idea-error"></textarea>
+            <p class="field-hint" id="project-idea-hint">Від 20 до 1000 символів. Опишіть користувача та очікуваний результат.</p>
+            <p class="field-error" id="project-idea-error" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn dialog-submit">Готово <span aria-hidden="true">↗</span></button>
+        </form>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo"
+          ><img src="img/logo.png" alt="Linear"
+        /></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="team.html">Команда</a></li>
+            <li><a href="price.html">Формати</a></li>
+            <li><a href="contact.html" style="color:#5e6ad2" aria-current="page">Контакти</a></li>
+          </ul>
+          <a href="#contact-modal" class="btn" id="open-modal" aria-haspopup="dialog" aria-controls="contact-modal">Описати ідею</a>
+        </nav>
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <main class="main-section">
+      <div class="container-main">
+        <div class="bg-fon">
+          <img src="img/a.png" alt="Ілюстрація цифрового робочого простору" />
+        </div>
+        <h1 class="title">Почніть з ідеї. Знайдіть відповіді.</h1>
+        <p class="description">Підготуйте опис майбутнього вебзастосунку та перегляньте відповіді на часті питання. Нижче наведено адресу, телефон і графік роботи в Івано-Франківську.</p>
+      </div>
+    </main>
+    <section class="contact-section">
+      <div class="container-contact">
+        <!-- Ліва колонка: контакти + форма -->
+        <div class="contact-column">
+          <div class="contact-details card-contact" id="local-contacts">
+            <h3>Контактні дані</h3>
+            <p>Телефон: <a href="tel:+380733441415">+38 (073) 344-14-15</a></p>
+            <p>Адреса: Івано-Франківськ, вул. Сахарова, 23Д, інноваційний центр «Промприлад», корпус А2, 3 поверх.</p>
+            <p>Графік роботи: понеділок–п’ятниця, 10:00–18:00.</p>
+          </div>
+
+          <form class="contact-form card-contact" id="idea" data-validate>
+            <h3>Сформулюйте ідею застосунку</h3>
+            <p class="contact-form-note">Кому допоможе ваш продукт? Опишіть одну задачу, яку користувач зможе вирішити за його допомогою.</p>
+            <label for="idea-title">Назва ідеї</label>
+            <input id="idea-title" type="text" placeholder="Наприклад: каталог локальної майстерні" minlength="3" maxlength="100" required aria-describedby="idea-title-error" />
+            <p class="field-error" id="idea-title-error" aria-live="polite"></p>
+            <label for="idea-email">Електронна пошта</label>
+            <input id="idea-email" type="email" placeholder="you@example.com" maxlength="120" required aria-describedby="idea-email-error" />
+            <p class="field-error" id="idea-email-error" aria-live="polite"></p>
+            <label for="idea-description">Користувач і його задача</label>
+            <textarea id="idea-description" placeholder="Хто відкриє застосунок і що має отримати в результаті?" minlength="20" maxlength="1000" required aria-describedby="idea-description-error"></textarea>
+            <p class="field-error" id="idea-description-error" aria-live="polite"></p>
+            <button type="submit">Перевірити опис</button>
+          </form>
+        </div>
+
+        <!-- Права колонка: карта -->
+        <div class="contact-map card-contact">
+          <h3>Розташування на карті</h3>
+          <p>
+            Івано-Франківськ, вул. Сахарова, 23Д, інноваційний центр «Промприлад», корпус А2, 3 поверх.
+          </p>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps?q=Ivano-Frankivsk+Sakharova+23D&output=embed"
+              title="Карта: Івано-Франківськ, вул. Сахарова, 23Д" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container-faq">
+        <h2 class="faq-title">Часті питання</h2>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Чи потрібні навички програмування, щоб почати?</span>
+              <span class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>Для початку важливо розуміти задачу та шлях користувача. Візуальні конструктори допомагають працювати зі сторінками й даними без написання коду, але складні інтеграції та правила доступу потребують окремого вивчення.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Який застосунок варто створювати першим?</span>
+              <span class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>Оберіть невеликий сценарій: каталог послуг, базу знань або внутрішній перелік задач. Почніть із головної дії та перевірте, чи зрозумілий результат майбутнім користувачам.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Що підготувати до роботи над застосунком?</span>
+              <span class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>Запишіть мету, визначте користувачів, зберіть тексти та приклади потрібних даних. Окремо опишіть головні екрани, переходи між ними та обмеження доступу.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Від чого залежить вартість запуску?</span>
+              <span class="faq-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>Витрати визначаються умовами обраного конструктора, обсягом даних, кількістю користувачів та складністю процесів. Перш ніж обирати платформу, складіть перелік обов’язкових можливостей і перевірте її тарифи.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <p>
+            <img src="img/favicon.png" alt="Linear" />Linear
+          </p>
+          <div class="footer-socials">
+            <a href="index.html#scenarios" aria-label="Сценарії застосування"
+              ><i class="fa-brands fa-twitter" style="color: #8a8f98"></i
+            ></a>
+            <a href="team.html#roles" aria-label="Ролі в команді"
+              ><i class="fa-brands fa-github" style="color: #8a8f98"></i
+            ></a>
+            <a href="contact.html#faq" aria-label="Часті питання"
+              ><i class="fa-brands fa-slack" style="color: #8a8f98"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Продукт</h4>
+            <ul>
+              <li><a href="index.html#features">Можливості</a></li>
+              <li><a href="index.html#features">Візуальні сторінки</a></li>
+              <li><a href="price.html#plans">Формати запуску</a></li>
+              <li><a href="index.html#workflows">Робочі процеси</a></li>
+              <li><a href="contact.html#faq">З чого почати</a></li>
+              <li><a href="team.html#approach">Підхід до створення</a></li>
+              <li><a href="contact.html#idea">Підготувати ідею</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Компанія</h4>
+            <ul>
+              <li><a href="team.html#approach">Наш підхід</a></li>
+              <li><a href="team.html#roles">Ролі в команді</a></li>
+              <li><a href="index.html#workflows">Етапи запуску</a></li>
+              <li><a href="index.html#scenarios">Для кого сервіс</a></li>
+              <li><a href="index.html">Про Linear</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Ресурси</h4>
+            <ul>
+              <li><a href="index.html#scenarios">Сценарії застосування</a></li>
+              <li><a href="contact.html#local-contacts">Контакти</a></li>
+              <li><a href="index.html#data">Підготовка даних</a></li>
+              <li><a href="contact.html#faq">Питання про дані</a></li>
+              <li><a href="price.html#plans">План запуску</a></li>
+              <li><a href="contact.html#idea">Описати задачу</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Для творців</h4>
+            <ul>
+              <li><a href="index.html#data">Структура даних</a></li>
+              <li><a href="index.html#workflows">Автоматизація</a></li>
+              <li><a href="index.html#scenarios">Внутрішні інструменти</a></li>
+              <li><a href="team.html#roles">Ролі та відповідальність</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Linear – вебзастосунки без програмування</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Від ідеї до вебзастосунку: візуальні сторінки, дані та робочі процеси. Сплануйте власний продукт без написання коду."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-intro" aria-hidden="true">
+      <div class="modal-content project-dialog">
+        <button type="button" class="modal-close" aria-label="Закрити форму">&times;</button>
+        <p class="dialog-eyebrow">Від ідеї до застосунку</p>
+        <h2 id="project-dialog-title">Опишіть свій задум</h2>
+        <p id="project-dialog-intro">Продумайте перший крок: для кого ваш застосунок і яку задачу він має вирішити.</p>
+        <form id="contact-form" class="project-form" data-validate>
+          <div class="dialog-fields">
+            <div class="form-field">
+              <label for="project-name">Ваше ім’я</label>
+              <input type="text" id="project-name" name="name" placeholder="Як до вас звертатися" autocomplete="given-name" minlength="2" maxlength="60" required aria-describedby="project-name-error" />
+              <p class="field-error" id="project-name-error" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+              <label for="project-email">Електронна пошта</label>
+              <input type="email" id="project-email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="120" required aria-describedby="project-email-error" />
+              <p class="field-error" id="project-email-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="project-type">Який застосунок ви плануєте?</label>
+            <select id="project-type" name="type" required aria-describedby="project-type-error">
+              <option value="">Оберіть напрям</option>
+              <option value="catalog">Каталог товарів або послуг</option>
+              <option value="portal">Клієнтський портал</option>
+              <option value="workflow">Внутрішній інструмент команди</option>
+              <option value="education">Освітній застосунок</option>
+              <option value="other">Власна ідея</option>
+            </select>
+            <p class="field-error" id="project-type-error" aria-live="polite"></p>
+          </div>
+          <div class="form-field">
+            <label for="project-idea">Основна задача застосунку</label>
+            <textarea id="project-idea" name="idea" rows="3" placeholder="Наприклад: каталог майстерні з описами виробів і зручним пошуком" minlength="20" maxlength="1000" required aria-describedby="project-idea-hint project-idea-error"></textarea>
+            <p class="field-hint" id="project-idea-hint">Від 20 до 1000 символів. Опишіть користувача та очікуваний результат.</p>
+            <p class="field-error" id="project-idea-error" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn dialog-submit">Готово <span aria-hidden="true">↗</span></button>
+        </form>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Linear" /></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html" style="color:#5e6ad2" aria-current="page">Головна</a></li>
+            <li><a href="team.html">Команда</a></li>
+            <li><a href="price.html">Формати</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+          </ul>
+          <a href="#contact-modal" class="btn" id="open-modal" aria-haspopup="dialog" aria-controls="contact-modal">Описати ідею</a>
+        </nav>
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <main class="main-section">
+      <div class="container-main" data-aos="fade-right">
+        <div class="bg-fon" data-aos="fade-right">
+          <img src="img/a.png" alt="Ілюстрація цифрового робочого простору" />
+        </div>
+        <h1 class="title" data-aos="fade-left">Створюйте вебзастосунки без програмування</h1>
+        <p class="description" data-aos="fade-right">Linear – сервіс створення вебзастосунків без програмування. Перетворюйте ідеї на зручні цифрові продукти. Продумайте сторінки, впорядкуйте дані та поєднайте дії у зрозумілий сценарій. Почніть із малого застосунку, який вирішує одну важливу задачу.</p>
+      </div>
+    </main>
+    <div class="video-section" data-aos="fade-right">
+      <div>
+        <a href="#videoModal" id="openVideo"><i class="fa-solid fa-play"></i>Подивіться, як це працює</a>
+      </div>
+    </div>
+    <section class="block-text-section">
+      <h2 data-aos="fade-left">Ваша ідея.<br />Зрозумілий шлях до запуску.</h2>
+      <p data-aos="fade-right">
+        Створення без коду починається з користувача. Визначте його задачу, зберіть потрібні блоки та опишіть, як взаємодіють сторінки й дані. Кожен крок має наближати до корисного результату.
+      </p>
+    </section>
+    <section class="features-section" id="features">
+      <div class="container-feature">
+        <div class="intro">
+          <p class="brand-block" data-aos="fade-right"><i class="fa-brands fa-slack"></i>Візуальний підхід</p>
+          <div>
+            <h2 class="section-title" data-aos="fade-left">Збирайте сторінки з продуманих блоків.</h2>
+            <p class="section-text" data-aos="fade-right">Від першого екрана до детальної картки: продумайте структуру, розмістіть потрібні поля та залиште тільки зрозумілі дії.</p>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-blue">
+            <div>
+              <h3 class="card-title" data-aos="fade-right">Готова структура</h3>
+              <p class="card-description" data-aos="fade-left">Сторінки каталогу, профілю та опису послуги як основа вашого задуму.</p>
+            </div>
+            <img src="img/card.png" alt="Ілюстрація інтерфейсу" data-aos="fade-right" />
+          </div>
+          <div class="card">
+            <img src="img/card2.png" alt="Ілюстрація інтерфейсу" data-aos="fade-left" />
+            <div>
+              <h3 class="card-title" data-aos="fade-right">Особисті розділи</h3>
+              <p class="card-description" data-aos="fade-left">Визначте, що бачить клієнт, а що залишається всередині команди.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cards-bottom">
+          <div class="card" data-aos="fade-right">
+            <img src="img/card3.png" alt="Ілюстрація інтерфейсу" data-aos="fade-left" />
+            <div>
+              <h3 class="card-title" data-aos="fade-left">Події та дії</h3>
+              <p class="card-description" data-aos="fade-left">Опишіть, яка подія запускає наступний крок у застосунку.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/card4.png" alt="Ілюстрація інтерфейсу" data-aos="fade-left" />
+            <div>
+              <h3 class="card-title" data-aos="fade-left">Зрозумілі стани</h3>
+              <p class="card-description" data-aos="fade-left">Покажіть користувачу, на якому етапі його робота та що робити далі.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="features-section" id="data">
+      <div class="container-feature">
+        <div class="intro" data-aos="fade-right">
+          <p class="brand-block" data-aos="fade-left">
+            <i class="fa-brands fa-squarespace"></i>Дані та взаємодія
+          </p>
+          <div>
+            <h2 class="section-title" data-aos="fade-right">Пов’язуйте дані з діями користувача.</h2>
+            <p class="section-text" data-aos="fade-left">Опишіть, що зберігає застосунок, як користувач знаходить потрібне та які дані бачить у кожному розділі.</p>
+          </div>
+        </div>
+        <div class="cards-two">
+          <div class="card">
+            <img src="img/card5.png" alt="Ілюстрація інтерфейсу" data-aos="fade-right" />
+            <div>
+              <h3 class="card-title" data-aos="fade-left">Пов’язані записи</h3>
+              <p class="card-description" data-aos="fade-left">Поєднайте товари з категоріями, а задачі – з відповідальними.</p>
+            </div>
+          </div>
+          <div class="card-blue">
+            <div>
+              <h3 class="card-title" data-aos="fade-right">Пошук і відбір</h3>
+              <p class="card-description" data-aos="fade-left">Продумайте поля, за якими зручно знаходити потрібний запис.</p>
+            </div>
+            <img src="img/card6.png" alt="Ілюстрація інтерфейсу" data-aos="fade-left" />
+          </div>
+        </div>
+        <div class="cards-bottom pos-abs">
+          <div class="card">
+            <img src="img/card7.png" alt="Ілюстрація інтерфейсу" data-aos="fade-right"/>
+            <div>
+              <h3 class="card-title" data-aos="fade-left">Швидкий доступ</h3>
+              <p class="card-description" data-aos="fade-left">Залиште головні дії поруч із даними, до яких вони належать.</p>
+            </div>
+          </div>
+          <div class="card" data-aos="fade-right">
+            <img src="img/card8.png" alt="Ілюстрація інтерфейсу" data-aos="fade-left"/>
+            <div>
+              <h3 class="card-title" data-aos="fade-left">Ролі користувачів</h3>
+              <p class="card-description" data-aos="fade-left">Сплануйте доступ клієнтів, редакторів і адміністраторів.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="review-section">
+      <div class="review">
+        <img src="img/bg2.png" alt="Ілюстрація інтерфейсу" data-aos="fade-right" />
+        <p data-aos="fade-left">
+          Почніть з однієї корисної задачі. Зрозуміла структура та продуманий шлях користувача важливіші за кількість функцій у першій версії.
+        </p>
+      </div>
+    </div>
+    <section class="features-section" id="workflows">
+      <div class="container-feature sla-container">
+        <div class="intro">
+          <p class="brand-block" data-aos="fade-left">
+            <i class="fa-solid fa-circle-plus"></i>Робочі процеси
+          </p>
+          <div>
+            <h2 class="section-title" data-aos="fade-right">Плануйте логіку без складного коду.</h2>
+            <p class="section-text" data-aos="fade-left">Розкладіть процес на послідовні кроки: подія, умова та дія. Так легше перевірити задум до створення великого продукту.</p>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card-sla" data-aos="fade-right">
+            <div>
+              <h3 class="card-title" data-aos="fade-right">Огляд показників<span>Дані</span></h3>
+              <p class="card-description" data-aos="fade-left">Оберіть дані, які допомагають<br />бачити стан роботи<br />та приймати рішення.</p>
+            </div>
+            <img src="img/card9.png" alt="Ілюстрація інтерфейсу" data-aos="fade-left" />
+          </div>
+          <div class="card-sla card">
+            <img src="img/card10.png" alt="Ілюстрація інтерфейсу" data-aos="fade-right"/>
+            <div>
+              <h3 class="card-title" data-aos="fade-left">Правила процесу<span>Логіка</span></h3>
+              <p class="card-description" data-aos="fade-left">Визначте умови переходів і відповідальних за кожен етап.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-sla-bottom">
+          <img src="img/carusel.png" alt="Ілюстрація інтерфейсу" data-aos="fade-left"/>
+          <div>
+            <h3 class="card-title" data-aos="fade-right">Послідовність кроків</h3>
+            <p class="card-description" data-aos="fade-left">Від першої дії до результату:<br />сплануйте кожен перехід користувача.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="block-text-section">
+      <h2 data-aos="fade-right">Застосунок під вашу задачу</h2>
+      <p data-aos="fade-left">
+        Каталог майстерні, клієнтський портал чи внутрішній інструмент: почніть із конкретної задачі та оберіть потрібні сторінки й дані.
+      </p>
+    </section>
+    <section class="section-cards" id="scenarios">
+      <div class="container-cards" id="cards-container"></div>
+    </section>
+    <section
+      class="main-section subs-section"
+      style="background: url('img/bg3.png') center no-repeat"
+    >
+      <div class="container-main">
+        <div class="bg-fon">
+          <img src="img/a.png" alt="Ілюстрація цифрового робочого простору" data-aos="fade-left" />
+        </div>
+        <div class="block-text-section">
+          <h2 data-aos="fade-right">Почніть із задуму.<br />Складіть план запуску.</h2>
+          <p>
+            Визначте користувачів, потрібні дані та перший корисний сценарій. <br />Порівняйте формати роботи над застосунком.
+          </p>
+        </div>
+        <div class="btn-subs">
+          <a href="price.html" class="btn" data-aos="fade-right">Порівняти формати</a>
+          <a href="contact.html#idea" class="btn" data-aos="fade-right">Підготувати ідею</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <p>
+            <img src="img/favicon.png" alt="Linear" data-aos="fade-left" />Linear
+          </p>
+          <div class="footer-socials">
+            <a href="index.html#scenarios" aria-label="Сценарії застосування"
+              ><i class="fa-brands fa-twitter" style="color: #8a8f98"></i
+            ></a>
+            <a href="team.html#roles" aria-label="Ролі в команді"
+              ><i class="fa-brands fa-github" style="color: #8a8f98"></i
+            ></a>
+            <a href="contact.html#faq" aria-label="Часті питання"
+              ><i class="fa-brands fa-slack" style="color: #8a8f98"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column" data-aos="fade-right">
+            <h4>Продукт</h4>
+            <ul>
+              <li><a href="index.html#features">Можливості</a></li>
+              <li><a href="index.html#features">Візуальні сторінки</a></li>
+              <li><a href="price.html#plans">Формати запуску</a></li>
+              <li><a href="index.html#workflows">Робочі процеси</a></li>
+              <li><a href="contact.html#faq">З чого почати</a></li>
+              <li><a href="team.html#approach">Підхід до створення</a></li>
+              <li><a href="contact.html#idea">Підготувати ідею</a></li>
+            </ul>
+          </div>
+          <div class="footer-column" data-aos="fade-left">
+            <h4>Компанія</h4>
+            <ul>
+              <li><a href="team.html#approach">Наш підхід</a></li>
+              <li><a href="team.html#roles">Ролі в команді</a></li>
+              <li><a href="index.html#workflows">Етапи запуску</a></li>
+              <li><a href="index.html#scenarios">Для кого сервіс</a></li>
+              <li><a href="index.html">Про Linear</a></li>
+            </ul>
+          </div>
+          <div class="footer-column" data-aos="fade-right">
+            <h4>Ресурси</h4>
+            <ul>
+              <li><a href="index.html#scenarios">Сценарії застосування</a></li>
+              <li><a href="contact.html#local-contacts">Контакти</a></li>
+              <li><a href="index.html#data">Підготовка даних</a></li>
+              <li><a href="contact.html#faq">Питання про дані</a></li>
+              <li><a href="price.html#plans">План запуску</a></li>
+              <li><a href="contact.html#idea">Описати задачу</a></li>
+            </ul>
+          </div>
+          <div class="footer-column" data-aos="fade-left">
+            <h4>Для творців</h4>
+            <ul>
+              <li><a href="index.html#data">Структура даних</a></li>
+              <li><a href="index.html#workflows">Автоматизація</a></li>
+              <li><a href="index.html#scenarios">Внутрішні інструменти</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="videoModal" class="modal">
+      <div class="modal-content video-modal">
+        <span class="modal-close" id="closeVideo">&times;</span>
+
+        <div class="video-container">
+          <iframe
+            id="videoFrame"
+            src=""
+            title="Відео про роботу цифрового інструмента"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1400,
+      });
+    </script>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>

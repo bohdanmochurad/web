@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Команда та підхід до створення – Linear</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Дизайн, структура даних і перевірка сценаріїв: як розподілити ролі в команді та підготувати вебзастосунок без програмування."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-intro" aria-hidden="true">
+      <div class="modal-content project-dialog">
+        <button type="button" class="modal-close" aria-label="Закрити форму">&times;</button>
+        <p class="dialog-eyebrow">Від ідеї до застосунку</p>
+        <h2 id="project-dialog-title">Опишіть свій задум</h2>
+        <p id="project-dialog-intro">Продумайте перший крок: для кого ваш застосунок і яку задачу він має вирішити.</p>
+        <form id="contact-form" class="project-form" data-validate>
+          <div class="dialog-fields">
+            <div class="form-field">
+              <label for="project-name">Ваше ім’я</label>
+              <input type="text" id="project-name" name="name" placeholder="Як до вас звертатися" autocomplete="given-name" minlength="2" maxlength="60" required aria-describedby="project-name-error" />
+              <p class="field-error" id="project-name-error" aria-live="polite"></p>
+            </div>
+            <div class="form-field">
+              <label for="project-email">Електронна пошта</label>
+              <input type="email" id="project-email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="120" required aria-describedby="project-email-error" />
+              <p class="field-error" id="project-email-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="project-type">Який застосунок ви плануєте?</label>
+            <select id="project-type" name="type" required aria-describedby="project-type-error">
+              <option value="">Оберіть напрям</option>
+              <option value="catalog">Каталог товарів або послуг</option>
+              <option value="portal">Клієнтський портал</option>
+              <option value="workflow">Внутрішній інструмент команди</option>
+              <option value="education">Освітній застосунок</option>
+              <option value="other">Власна ідея</option>
+            </select>
+            <p class="field-error" id="project-type-error" aria-live="polite"></p>
+          </div>
+          <div class="form-field">
+            <label for="project-idea">Основна задача застосунку</label>
+            <textarea id="project-idea" name="idea" rows="3" placeholder="Наприклад: каталог майстерні з описами виробів і зручним пошуком" minlength="20" maxlength="1000" required aria-describedby="project-idea-hint project-idea-error"></textarea>
+            <p class="field-hint" id="project-idea-hint">Від 20 до 1000 символів. Опишіть користувача та очікуваний результат.</p>
+            <p class="field-error" id="project-idea-error" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn dialog-submit">Готово <span aria-hidden="true">↗</span></button>
+        </form>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo"
+          ><img src="img/logo.png" alt="Linear"
+        /></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="team.html" style="color:#5e6ad2" aria-current="page">Команда</a></li>
+            <li><a href="price.html">Формати</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+          </ul>
+          <a href="#contact-modal" class="btn" id="open-modal" aria-haspopup="dialog" aria-controls="contact-modal">Описати ідею</a>
+        </nav>
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <section class="block-text-section" id="approach">
+      <h1 class="approach-title" data-aos="fade-left">Від задуму до злагодженої роботи</h1>
+      <p data-aos="fade-right">
+        Створення без коду поєднує розуміння користувача, дизайн і роботу з даними. Розподіліть ролі та перевіряйте рішення разом, щоб застосунок залишався зручним на кожному етапі.
+      </p>
+    </section>
+    <section class="section-cards">
+      <div class="container-cards" id="cards-container"></div>
+    </section>
+    <section class="team-section" id="roles">
+      <h2>Ролі в команді проєкту</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card-team">
+              <img src="img/team1.jpg" alt="Портрет у блоці проєктних ролей" />
+              <div>
+                <h3>Дизайн інтерфейсу</h3>
+                <p>Зрозумілі екрани й компоненти</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-team">
+              <img src="img/team2.jpg" alt="Портрет у блоці проєктних ролей" />
+              <div>
+                <h3>Структура даних</h3>
+                <p>Зв’язки, поля та порядок записів</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-team">
+              <img src="img/team3.jpg" alt="Портрет у блоці проєктних ролей" />
+              <div>
+                <h3>Досвід користувача</h3>
+                <p>Зручний шлях до результату</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-team">
+              <img src="img/team4.jpg" alt="Портрет у блоці проєктних ролей" />
+              <div>
+                <h3>Координація проєкту</h3>
+                <p>Пріоритети та послідовність робіт</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-team">
+              <img src="img/team5.jpg" alt="Портрет у блоці проєктних ролей" />
+              <div>
+                <h3>Розвиток продукту</h3>
+                <p>Задачі користувачів і цінність</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card-team">
+              <img src="img/team6.jpg" alt="Портрет у блоці проєктних ролей" />
+              <div>
+                <h3>Перевірка якості</h3>
+                <p>Уважність до кожного сценарію</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <section
+      class="main-section subs-section"
+      style="background: url('img/bg3.png') center no-repeat"
+    >
+      <div class="container-main">
+        <div class="bg-fon">
+          <img src="img/a.png" alt="Ілюстрація цифрового робочого простору" />
+        </div>
+        <div class="block-text-section">
+          <h2>Почніть із задуму.<br />Складіть план запуску.</h2>
+          <p>
+            Визначте користувачів, потрібні дані та перший корисний сценарій. <br />Порівняйте формати роботи над застосунком.
+          </p>
+        </div>
+        <div class="btn-subs">
+          <a href="price.html" class="btn">Порівняти формати</a>
+          <a href="contact.html#idea" class="btn">Підготувати ідею</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <p>
+            <img src="img/favicon.png" alt="Linear" />Linear
+          </p>
+          <div class="footer-socials">
+            <a href="index.html#scenarios" aria-label="Сценарії застосування"
+              ><i class="fa-brands fa-twitter" style="color: #8a8f98"></i
+            ></a>
+            <a href="team.html#roles" aria-label="Ролі в команді"
+              ><i class="fa-brands fa-github" style="color: #8a8f98"></i
+            ></a>
+            <a href="contact.html#faq" aria-label="Часті питання"
+              ><i class="fa-brands fa-slack" style="color: #8a8f98"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Продукт</h4>
+            <ul>
+              <li><a href="index.html#features">Можливості</a></li>
+              <li><a href="index.html#features">Візуальні сторінки</a></li>
+              <li><a href="price.html#plans">Формати запуску</a></li>
+              <li><a href="index.html#workflows">Робочі процеси</a></li>
+              <li><a href="contact.html#faq">З чого почати</a></li>
+              <li><a href="team.html#approach">Підхід до створення</a></li>
+              <li><a href="contact.html#idea">Підготувати ідею</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Компанія</h4>
+            <ul>
+              <li><a href="team.html#approach">Наш підхід</a></li>
+              <li><a href="team.html#roles">Ролі в команді</a></li>
+              <li><a href="index.html#workflows">Етапи запуску</a></li>
+              <li><a href="index.html#scenarios">Для кого сервіс</a></li>
+              <li><a href="index.html">Про Linear</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Ресурси</h4>
+            <ul>
+              <li><a href="index.html#scenarios">Сценарії застосування</a></li>
+              <li><a href="contact.html#local-contacts">Контакти</a></li>
+              <li><a href="index.html#data">Підготовка даних</a></li>
+              <li><a href="contact.html#faq">Питання про дані</a></li>
+              <li><a href="price.html#plans">План запуску</a></li>
+              <li><a href="contact.html#idea">Описати задачу</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Для творців</h4>
+            <ul>
+              <li><a href="index.html#data">Структура даних</a></li>
+              <li><a href="index.html#workflows">Автоматизація</a></li>
+              <li><a href="index.html#scenarios">Внутрішні інструменти</a></li>
+              <li><a href="team.html#roles">Ролі та відповідальність</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1400,
+      });
+    </script>
+  </body>
+</html>
